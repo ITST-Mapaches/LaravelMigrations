@@ -10,8 +10,9 @@
 > 4. Abre una terminal en el proyecto y ejecuta el comando ``php artisan serve``, esto inciará el servidor de laravel
 > 5. Ejecuta el comando ``npm install``, esto instalará las dependencias de node.js del proyecto, verás que se crea una carpeta llamada **node_modules**, allí se encuentran las dependencias.
 > 6.  Crea una base de datos en MySQL
-> 7. Agrega la información de tu base de datos en el archivo .env (esto deberás crearlo por tu cuenta, simplemente cambia el nombre del archivo ``.env.example`` a ``.env``)
+> 7. Agrega la información de tu base de datos en el archivo ``.env`` (esto deberás crearlo por tu cuenta, simplemente cambia el nombre del archivo ``.env.example`` a ``.env`` y agrega el nombre de tu base de datos)
 > 8. Ejecuta el comando ``php artisan migrate``, esto creará las tablas en la base de datos a partir de los archivos de migración
+> 9. Ejecuta el comando ``php artisan db:seed --class=proveedoresSeeder``, esto ejecutará el script que inserta datos falsos en la tabla proveedores
 >
 >Listo ahora podrás ver en tu base de datos tablas como:
 > * users
