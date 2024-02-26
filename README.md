@@ -7,12 +7,14 @@
 > 1. Inicia tu servidor Apache
 > 2. Inicia tu servidor MySQL
 > 3. Abre el proyecto en el editor de código de tu preferencia
-> 4. Abre una terminal en el proyecto y ejecuta el comando ``php artisan serve``, esto inciará el servidor de laravel
-> 5. Ejecuta el comando ``npm install``, esto instalará las dependencias de node.js del proyecto, verás que se crea una carpeta llamada **node_modules**, allí se encuentran las dependencias.
-> 6.  Crea una base de datos en MySQL
-> 7. Agrega la información de tu base de datos en el archivo ``.env`` (esto deberás crearlo por tu cuenta, simplemente cambia el nombre del archivo ``.env.example`` a ``.env`` y agrega el nombre de tu base de datos)
-> 8. Ejecuta el comando ``php artisan migrate``, esto creará las tablas en la base de datos a partir de los archivos de migración
-> 9. Ejecuta el comando ``php artisan db:seed --class=proveedoresSeeder``, esto ejecutará el script que inserta datos falsos en la tabla proveedores
+> 4. Abre una terminal en el proyecto y ejecuta el comando ``composer install``, esto instalará las dependencias de desarrrollo de laravel
+> 5. Ejecutar el comando ``php artisan serve``, esto inciará el servidor de laravel
+> 6. Ejecuta el comando ``npm install``, esto instalará las dependencias de node.js del proyecto, verás que se crea una carpeta llamada **node_modules**, allí se encuentran las dependencias.
+> 7. Ejecuta el comando ``npm run dev`` esto iniciará el servidor de desarrollo vite
+> 8.  Crea una base de datos en MySQL
+> 9. Agrega la información de tu base de datos en el archivo ``.env`` (esto deberás crearlo por tu cuenta, simplemente cambia el nombre del archivo ``.env.example`` a ``.env`` y agrega el nombre de tu base de datos)
+> 10. Ejecuta el comando ``php artisan migrate``, esto creará las tablas en la base de datos a partir de los archivos de migración
+> 11. Ejecuta el comando ``php artisan db:seed --class=proveedoresSeeder``, esto ejecutará el script que inserta datos falsos en la tabla proveedores
 >
 >Listo ahora podrás ver en tu base de datos tablas como:
 > * users
