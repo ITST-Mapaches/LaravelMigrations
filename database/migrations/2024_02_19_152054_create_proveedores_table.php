@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->String('razonSocial');
             $table->String('nombreCompleto');
             $table->String('direccion');
-            $table->String('telefono', 15);
+            $table->String('telefono', 20);
             $table->String('correo')->array_unique();
             $table->String('rfc', 13);
             $table->timestamps();

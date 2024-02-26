@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\proveedoresModel;
 use Illuminate\Http\Request;
 
 class proveedorController extends Controller
@@ -11,7 +12,11 @@ class proveedorController extends Controller
      */
     public function index()
     {
-        //
+        //obtiene todos los registros de la tabla proveedores a traves del modelo
+        $proveedores = proveedoresModel::get();
+
+        //retorna la vista index que se encuentra en la carpeta proveedores y le envía el arreglo con los registros de proveedores
+        return view("proveedores.index", compact("proveedores"));
     }
 
     /**
