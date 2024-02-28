@@ -26,10 +26,16 @@
             <td>{{ $proveedor->correo }}</td>
             <td>{{ $proveedor->rfc }}</td>
             <td>
-            <button type="button" class="btn btn-primary">Actualizar</button>
-            <button type="button" class="btn btn-danger">Eliminar</button>
+                <button type="button" class="btn btn-primary">Actualizar</button>
+                <button type="button" class="btn btn-danger">Eliminar</button>
             </td>
         </tr>
         @endforeach
     </tbody>
 </table>
+
+<div class="card-footer">
+    @if($proveedores->total() > 10)
+    {{$proveedores->links()}}
+    @endif
+</div>

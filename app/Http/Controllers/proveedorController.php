@@ -10,10 +10,26 @@ class proveedorController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //obtiene todos los registros de la tabla proveedores a traves del modelo
-        $proveedores = proveedoresModel::get();
+        // $proveedores = proveedoresModel::get();
+
+        $proveedores = proveedoresModel::selec('*')->orderBy('idProveedor', $limit = (insert($request->limit)) ? $request->limit : 10);
+
+
+        if (isset($request->search)) {
+            $proveedores = $proveedores
+                ->where('idProveedor', 'like', '%' . $request->search . '%')
+                ->orWhere('razonSocial', 'like', '%' . $request->search . '%')
+                ->orWhere('nombreCompleto', 'like', '%' . $request->search . '%')
+                ->orWhere('direccion', 'like', '%' . $request->search . '%')
+                ->orWhere('telefono', 'like', '%' . $request->search . '%')
+                ->orWhere('correo', 'like', '%' . $request->search . '%')
+                ->orWhere('rfc', 'like', '%' . $request->search . '%');
+        }
+
+        $proveedores = $proveedores->paginate($limit)->appends($request->all());
 
         //retorna la vista index que se encuentra en la carpeta proveedores y le envía el arreglo con los registros de proveedores
         return view("proveedores.index", compact("proveedores"));
